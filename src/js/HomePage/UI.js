@@ -73,9 +73,9 @@ export default {
 
     headerFunctions: function () {
         const menuBtn = document.querySelector(".menuBtn");
+        const navsContainer = document.querySelector(".navs");
+
         menuBtn.addEventListener("click", (e) => {
-            const navsContainer = document.querySelector(".navs");
-            console.log(navsContainer);
             if (navsContainer.classList.contains("opacity-0")) {
                 navsContainer.classList.remove("opacity-0", "-z-50");
                 navsContainer.classList.add(
@@ -88,5 +88,12 @@ export default {
                 navsContainer.classList.remove("opacity-1", "translate-y-5");
             }
         });
+
+        window.addEventListener("resize",(e)=> {
+            if(window.innerWidth > 750) {
+                navsContainer.classList.add("opacity-0", "-z-50");
+                navsContainer.classList.remove("opacity-1", "translate-y-5");
+            }
+        })
     },
 };
