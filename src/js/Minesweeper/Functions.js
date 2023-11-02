@@ -25,7 +25,7 @@ export default {
         //** */
 
         const squareWidth = `calc((375px - 2rem) / 10)`
-            gameBoard.style = `max-width: calc(${squareWidth} * 10)`
+            gameBoard.style = `max-width: calc(${squareWidth} * ${width})`
 
             for(let i = 1; i <= width*width; i++) {
                 const square = document.createElement("div")
@@ -48,6 +48,7 @@ export default {
 function check(square,width) {
     const squareId = +square.id
     let total = 0
+    
     //**    CHECK EDİLEN SQUARE'İN KRİTİK KONUMLARINI SORGULAMAK */
     const isLeft = square.id % width === 1
     const isRight = square.id % width === 0
@@ -61,6 +62,7 @@ function check(square,width) {
     
     //**    CHECK EDİLEN SQUARE'İ ÇEVRELEYEN 8 SQUARE'İN KONUMLARI */
     const allSquares = [...document.querySelectorAll("#gameBoard div")]
+
     const rightSquare = allSquares.filter(square => +square.id === squareId + 1)[0]
     const leftSquare = allSquares.filter(square => +square.id === squareId - 1)[0]
     const topSquare = allSquares.filter(square => +square.id === squareId - width )[0]
