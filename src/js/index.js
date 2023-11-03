@@ -4,11 +4,8 @@ import styles from "../assets/styles/style.css";
 //**    PAGE */
 import HomePage_UI from "./HomePage/UI";
 
-//**    WORDS API */
-import WordsAPI_UI from "./WordsAPI/UI";
 
-//**    MINESWEEPER */
-import Minesweeper_UI from "./Minesweeper/UI"
+
 
 //**    PAGE HEADER */
 const headerElement = document.createElement("header");
@@ -31,12 +28,11 @@ document.body.appendChild(mainElement);
 
 //!     MINESWEEPER //
 //**    ADD WORDS API NAV TO PAGE HEADER */
-headerElement.innerHTML += Minesweeper_UI.header()
-Minesweeper_UI.headerFunctions()
-// //! DEV : START BUTONLA UĞRAŞMAMAK İÇİN
-// import Mineswapper_Functions from "./Minesweeper/Functions"
+// headerElement.innerHTML += Minesweeper_UI.header()
+// Minesweeper_UI.headerFunctions()
+// ! DEV : START BUTONLA UĞRAŞMAMAK İÇİN
 // Mineswapper_Functions.startGame()
-// //!     //
+// !     //
 
 
 

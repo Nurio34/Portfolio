@@ -1,3 +1,6 @@
+
+import Homepage_addUI from "./addUI"
+
 export default {
     header: function () {
         return `
@@ -5,7 +8,7 @@ export default {
         <nav class="main-nav hidden row-start-1 row-end-2
         md:block">
             <ul class="flex gap-4">
-                <li><button>Projects</button></li>
+                <li><button id="projectsButton">Projects</button></li>
                 <li><button>About</button></li>
                 <li><button>Services</button></li>
                 <li><button>Contact</button></li>
@@ -95,5 +98,17 @@ export default {
                 navsContainer.classList.remove("opacity-1", "translate-y-5");
             }
         })
+
+        const projectsButton = document.querySelector("#projectsButton")
+            projectsButton.addEventListener("click", ()=> {
+                const headerElement = document.querySelector("header")
+                const projectsElement = document.createElement("div")
+                    projectsElement.className = "projects flex justify-start gap-8 bg-blue-200 col-start-1 col-end-3 md:col-end-4 bg-blue-300 pb-2"
+                    projectsElement.innerHTML = Homepage_addUI.projectsElement()
+                    headerElement.append(projectsElement)
+                    Homepage_addUI.projectsElementFunctions()
+                console.log("ok");
+            })
     },
+
 };
